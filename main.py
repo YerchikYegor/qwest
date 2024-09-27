@@ -1,9 +1,8 @@
 import json
 
-with open('1.txt', 'r', encoding='utf-8') as file:
-    a = file.read()
-list_qwest = json.loads(a)
-print(list_qwest)
+
+with open('1.json', 'r', encoding='utf-8') as file:
+    data = json.loads(file.read())
 
 
 class Qwest():
@@ -15,8 +14,8 @@ class Qwest():
         self.ans_user = None
         self.score = self.get_point()
 
-    def get_point(self):
-        return self.diff + 10
+    def build_question(self):
+        return f'Вопрос: {self.text}\nСложность {self.diff}/5'
 
     def is_corect(self):
         if self.ans_user == self.answer:
@@ -24,12 +23,20 @@ class Qwest():
         else:
             return False
 
-    def build_question(self):
-        print(self.text)
-        print(self.diff)
+    def get_point(self):
+        return self.diff + 10
 
     def build_positive_feedback(self):
         if self.is_corect():
-            print('Правильно!!! получено ', self.score,'баллов.')
+            return  f'Правильно!!! получено {self.score} баллов.'
         else:
-            print('Не правильно ')
+            return 'Не правильно '
+qwest_list = []
+for q in data:
+    qwest_list.append(Qwest(q['text'],q['diff'], q['answer']))
+for qwest in qwest_list:
+    print(qwest.build_question())
+    qwest.ans_user = input('ведите ответ')
+    print(qwest.is_corect())
+    print(qwest.get_point())
+    print(qwest.build_positive_feedback())

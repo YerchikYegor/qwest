@@ -1,4 +1,0 @@
-a = [{
-    'Are you a profgramist?': 'text', 'yes': 'answer' , '1' : 'score'},
-    {'In which planet you live?': 'text', 'Earth': 'answer' , '2' : 'score',
-     {'2+2=':'text','4': 'answer', '3': 'score'}]

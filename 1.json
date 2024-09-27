@@ -1,0 +1,20 @@
+[
+  {
+    "text": "Are you a profgramist?",
+    "diff": 1,
+    "answer": "yes"
+  },
+  {
+    "text": "In which city you live",
+    "diff": 100,
+    "answer": "Grodno"
+  },
+  { "text":"Do you learn python?",
+    "diff" :5 ,
+    "answer" : "yes"
+  },
+  { "text":"Who was the first person in space?",
+    "diff" :4 ,
+    "answer" : "Gagarin"
+  }
+]
